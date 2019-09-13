@@ -1,4 +1,4 @@
-package Module1;
+package Module1.MathLab;
 
 public class MathLabFerenheitToCelsius {
 

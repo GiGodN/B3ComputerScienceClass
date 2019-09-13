@@ -1,4 +1,4 @@
-package Module1;
+package Module1.MathLab;
 
 public class MathLabCubeSA {
 	public static void main(String[] args) {
