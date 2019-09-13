@@ -1,4 +1,4 @@
-package Module1;
+package module1;
 
 public class Lab_One_Variables {
 	public static void main(String[] args) {
