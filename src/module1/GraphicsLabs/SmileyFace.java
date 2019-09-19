@@ -8,12 +8,11 @@ public class SmileyFace extends Canvas {
 	
 	private static final long serialVersionUID = 4156460185971353879L;
 	
-	public Color gray = new Color(0x333333);
 
 	public SmileyFace() // constructor - sets up the class
 	{
 		setSize(800, 600);
-		setBackground(gray);
+		setBackground(GraphicsRunner.gray);
 		setVisible(true);
 	}
 

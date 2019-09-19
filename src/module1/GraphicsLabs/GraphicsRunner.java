@@ -1,8 +1,11 @@
 package module1.GraphicsLabs;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 
 public class GraphicsRunner extends JFrame {
+	
+	public static Color gray = new Color(0x333333);
 	
 	private static final long serialVersionUID = -4448677044864620437L;
 	private static final int WIDTH = 800;
@@ -15,6 +18,7 @@ public class GraphicsRunner extends JFrame {
 
 		getContentPane().add(new SmileyFace());
 
+		getContentPane().add(new BigHouse());
 		// add other classes to run them
 		// BigHouse, Robot, or ShapePanel
 
