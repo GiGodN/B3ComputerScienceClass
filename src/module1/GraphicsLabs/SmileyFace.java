@@ -6,13 +6,15 @@ import java.awt.Canvas;
 
 public class SmileyFace extends Canvas {
 	
+	public static Color gray = new Color(0x333333);
+	
 	private static final long serialVersionUID = 4156460185971353879L;
 	
 
 	public SmileyFace() // constructor - sets up the class
 	{
 		setSize(800, 600);
-		setBackground(GraphicsRunner.gray);
+		setBackground(gray);
 		setVisible(true);
 	}
 

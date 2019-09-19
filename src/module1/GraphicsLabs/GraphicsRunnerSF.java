@@ -3,22 +3,19 @@ package module1.GraphicsLabs;
 import java.awt.Color;
 import javax.swing.JFrame;
 
-public class GraphicsRunner extends JFrame {
-	
-	public static Color gray = new Color(0x333333);
+public class GraphicsRunnerSF extends JFrame {
 	
 	private static final long serialVersionUID = -4448677044864620437L;
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 
-	public GraphicsRunner() {
+	public GraphicsRunnerSF() {
 		super("Graphics Runner");
 
 		setSize(WIDTH, HEIGHT);
 
 		getContentPane().add(new SmileyFace());
 
-		getContentPane().add(new BigHouse());
 		// add other classes to run them
 		// BigHouse, Robot, or ShapePanel
 
@@ -28,6 +25,6 @@ public class GraphicsRunner extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		GraphicsRunner run = new GraphicsRunner();
+		GraphicsRunnerSF run = new GraphicsRunnerSF();
 	}
 }
