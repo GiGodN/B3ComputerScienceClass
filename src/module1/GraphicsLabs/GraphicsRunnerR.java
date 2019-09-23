@@ -14,10 +14,6 @@ public class GraphicsRunnerR extends JFrame {
 		setSize(WIDTH, HEIGHT);
 
 		getContentPane().add(new Robot());
-
-		// add other classes to run them
-		// BigHouse, Robot, or ShapePanel
-
 		setVisible(true);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

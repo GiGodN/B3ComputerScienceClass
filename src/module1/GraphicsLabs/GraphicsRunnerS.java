@@ -1,20 +1,19 @@
 package module1.GraphicsLabs;
 
-import java.awt.Color;
 import javax.swing.JFrame;
 
-public class GraphicsRunnerSF extends JFrame {
+public class GraphicsRunnerS extends JFrame {
 	
-	private static final long serialVersionUID = -4448677044864620437L;
+	private static final long serialVersionUID = -52866776126606422L;
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 
-	public GraphicsRunnerSF() {
+	public GraphicsRunnerS() {
 		super("Graphics Runner");
 
 		setSize(WIDTH, HEIGHT);
 
-		getContentPane().add(new SmileyFace());
+		getContentPane().add(new ShapePanel());
 
 		setVisible(true);
 
@@ -22,6 +21,6 @@ public class GraphicsRunnerSF extends JFrame {
 	}
 
 	public static void main(String args[]) {
-		GraphicsRunnerSF run = new GraphicsRunnerSF();
+		GraphicsRunnerS run = new GraphicsRunnerS();
 	}
 }
