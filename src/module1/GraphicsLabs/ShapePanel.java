@@ -34,5 +34,8 @@ public class ShapePanel extends JPanel {
 
 		Shape s1 = new Shape(100, 100, 100, 100, new Font("TAHOMA", Font.BOLD, 25), "Hello", new Color(0x123456), new Color(0x654321));
 		s1.draw(window);
+		
+		Shape s2 = new Shape(250, 200, 50, 50, new Font("Comic Sans", Font.ITALIC, 25), "Hi", new Color(0x553344), new Color(443355));
+		s2.draw(window);
 	}
 }
