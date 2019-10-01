@@ -1,4 +1,4 @@
-package Module1.MathLab;
+package module1.MathLab;
 
 public class MathLabTrapazoidArea {
 
