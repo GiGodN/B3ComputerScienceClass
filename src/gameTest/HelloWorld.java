@@ -1,4 +1,4 @@
-package gameTest;
+package gameTest; 
 
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;

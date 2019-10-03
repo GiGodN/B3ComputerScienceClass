@@ -1,4 +1,4 @@
-package module2.AvgStr;
+package module2.Str1;
 
 public class LeaveLetterOut {
 	
