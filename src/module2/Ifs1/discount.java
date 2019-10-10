@@ -1,4 +1,4 @@
-package module2.Ifs;
+package module2.Ifs1;
 
 public class discount {
 
