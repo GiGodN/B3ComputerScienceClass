@@ -1,6 +1,6 @@
 package module1.MethodLabs;
 
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class StarsAndStripes {
    public StarsAndStripes() {

@@ -1,8 +1,5 @@
 package module1.ClassLabs;
 
-import java.util.Scanner;
-import java.lang.Math.*;
-
 public class Triangle {
 	
 	private int sideA, sideB, sideC;

@@ -1,6 +1,5 @@
 package module1.GraphicsLabs;
 
-import java.awt.Color;
 import javax.swing.JFrame;
 
 public class GraphicsRunnerBH extends JFrame {

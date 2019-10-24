@@ -1,13 +1,10 @@
 package module1.GraphicsLabs;
 
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Canvas;
+
 import javax.swing.JPanel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ShapePanel extends JPanel {
 

@@ -1,19 +1,13 @@
 package module2.GraphicsLab;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Canvas;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.awt.Point;
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.Component;
-import java.awt.Font;
 
 public class Tablet extends JPanel implements KeyListener, Runnable {
 	private boolean[] keys;

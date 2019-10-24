@@ -1,9 +1,9 @@
 package module2.GraphicsLab;
 
-import javax.swing.JFrame;
-import java.awt.Component;
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JFrame;
 
 public class DrawIt extends JFrame {
 	public static int WIDTH = 800;

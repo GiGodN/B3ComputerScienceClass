@@ -5,16 +5,16 @@ import gameTest.Engine.io.Window;
 public class main implements Runnable{
 	
 	public Thread game;
-	public static Window window;
+	public Window window;
 	
-	public static final int WIDTH = 1280, HEIGHT = 760;
+	public final int WIDTH = 1280, HEIGHT = 760;
 	
 	public void start() {
 		game = new Thread(this, "game");
 		game.run();
 	}
 	
-	public static void init() {
+	public void init() {
 		System.out.println("initalizing game");
 		window = new Window(WIDTH, HEIGHT, "GAME");
 		window.create();
@@ -22,18 +22,18 @@ public class main implements Runnable{
 	
 	public void run() {
 		init();
-		while (true) {
+		while (!window.shouldClose()) {
 			update();
 			render();
 		}
 	}
 	
 	private void update() {
-		System.out.println("updating game");
+		window.update();
 	}
 	
 	private void render() {
-		System.out.println("rendering game");
+		window.swapBuffers();
 	}
 	
 	public static void main(String[] args) {

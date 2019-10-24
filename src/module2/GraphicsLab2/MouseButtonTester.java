@@ -1,11 +1,12 @@
 package module2.GraphicsLab2;
 
-import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.JFrame;
-import java.awt.event.MouseListener;
+import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
 
 public class MouseButtonTester extends JFrame implements MouseListener {
 	private int mouseX, mouseY;

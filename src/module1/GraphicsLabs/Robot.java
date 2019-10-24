@@ -1,8 +1,8 @@
 package module1.GraphicsLabs;
 
-import java.awt.Graphics;
-import java.awt.Color;
 import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
 
 class Robot extends Canvas {
 	

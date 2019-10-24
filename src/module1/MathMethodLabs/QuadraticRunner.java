@@ -1,7 +1,8 @@
 package module1.MathMethodLabs;
 
+import static java.lang.System.out;
+
 import java.util.Scanner;
-import static java.lang.System.*;
 
 public class QuadraticRunner {
 	
