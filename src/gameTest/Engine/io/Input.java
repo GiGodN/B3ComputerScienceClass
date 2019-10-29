@@ -4,17 +4,19 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWCursorPosCallback;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.glfw.GLFWMouseButtonCallback;
+import org.lwjgl.glfw.GLFWScrollCallback;
 
 public class Input {
 	private static boolean[] keys = new boolean[GLFW.GLFW_KEY_LAST];
 	private static boolean[] buttons = new boolean[GLFW.GLFW_MOUSE_BUTTON_LAST];
-	private static double mouseX;
-	private static double mouseY;
-	
+	private static double mouseX, mouseY;
+	private static double scrollX, scrollY;
+
 	private GLFWKeyCallback keyboard;
 	private GLFWCursorPosCallback mouseMov;
 	private GLFWMouseButtonCallback mouseBtn;
-	
+	private GLFWScrollCallback mouseScroll;
+
 	public Input() {
 		keyboard = new GLFWKeyCallback() {
 			public void invoke(long window, int key, int scanCode, int action, int mods) {
@@ -32,19 +34,26 @@ public class Input {
 				buttons[button] = (action != GLFW.GLFW_RELEASE);
 			}
 		};
-		
+		mouseScroll = new GLFWScrollCallback() {
+			public void invoke(long window, double offsetX, double offsetY) {
+				scrollX += offsetX;
+				scrollY += offsetY;
+			}
+		};
+
 	}
-	
+
 	public void destroy() {
 		keyboard.free();
 		mouseBtn.free();
 		mouseMov.free();
+		mouseScroll.free();
 	}
-	
+
 	public static boolean isKeyDown(int key) {
 		return keys[key];
 	}
-	
+
 	public static boolean isBtnDown(int btn) {
 		return buttons[btn];
 	}
@@ -57,6 +66,14 @@ public class Input {
 		return mouseY;
 	}
 
+	public static double getScrollX() {
+		return scrollX;
+	}
+
+	public static double getScrollY() {
+		return scrollY;
+	}
+
 	public GLFWKeyCallback getKeyboardCallback() {
 		return keyboard;
 	}
@@ -67,5 +84,9 @@ public class Input {
 
 	public GLFWMouseButtonCallback getMouseBtnCallback() {
 		return mouseBtn;
+	}
+
+	public GLFWScrollCallback getMouseScrollCallback() {
+		return mouseScroll;
 	}
 }
