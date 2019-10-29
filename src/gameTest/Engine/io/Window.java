@@ -2,8 +2,8 @@ package gameTest.Engine.io;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWVidMode;
+import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
-import org.lwjglx.debug.opengl.GL;
 
 public class Window {
 
