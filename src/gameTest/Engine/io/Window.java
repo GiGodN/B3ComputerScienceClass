@@ -5,6 +5,8 @@ import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 
+import gameTest.Engine.Maths.Vector3f;
+
 public class Window {
 
 	private int WIDTH, HEIGHT;
@@ -16,7 +18,7 @@ public class Window {
 	
 	private Input input;
 	
-	private float backgroundR, backgroundG, backgroundB;
+	private Vector3f background = new Vector3f(0, 0, 0);
 
 	public Window(int WIDTH, int HEIGHT, String Title) {
 		this.WIDTH = WIDTH;
@@ -55,7 +57,7 @@ public class Window {
 	}
 	
 	public void update() {
-		GL11.glClearColor(backgroundR, backgroundG, backgroundB, 1.0f);
+		GL11.glClearColor(background.getX(), background.getY(), background.getZ(), 1.0f);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 		GLFW.glfwPollEvents();
 		frame++;
@@ -76,9 +78,7 @@ public class Window {
 	}
 	
 	public void setBackgroundColor(float r, float g, float b) {
-		backgroundR = r;
-		backgroundG = g;
-		backgroundB = b;
+		background.set(r, g, b);
 	}
 	
 	public void destroy() {
