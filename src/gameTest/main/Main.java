@@ -18,9 +18,16 @@ public class Main implements Runnable {
 
 	public Renderer renderer;
 	public Mesh mesh = new Mesh(
-			new Vertex[] { new Vertex(new Vector3f(-0.5f, 0.5f, 0.0f)), new Vertex(new Vector3f(0.5f, 0.5f, 0.0f)),
-					new Vertex(new Vector3f(0.5f, -0.5f, 0.0f)), new Vertex(new Vector3f(-0.5f, -0.5f, 0.0f)) },
-			new int[] { 0, 1, 2, 0, 3, 2 });
+		new Vertex[] { 
+			new Vertex(new Vector3f(-0.5f,  0.5f, 0.0f)), 
+			new Vertex(new Vector3f( 0.5f,  0.5f, 0.0f)),
+			new Vertex(new Vector3f( 0.5f, -0.5f, 0.0f)), 
+			new Vertex(new Vector3f(-0.5f, -0.5f, 0.0f)) 
+		},
+		new int[] { 
+			0, 1, 2, 
+			0, 3, 2 
+	});
 
 	public void start() {
 		game = new Thread(this, "game");
