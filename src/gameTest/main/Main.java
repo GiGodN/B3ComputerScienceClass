@@ -4,6 +4,7 @@ import org.lwjgl.glfw.GLFW;
 
 import gameTest.Engine.Graphics.Mesh;
 import gameTest.Engine.Graphics.Renderer;
+import gameTest.Engine.Graphics.Shader;
 import gameTest.Engine.Graphics.Vertex;
 import gameTest.Engine.Maths.Vector3f;
 import gameTest.Engine.io.Input;
@@ -17,6 +18,7 @@ public class Main implements Runnable {
 	public final int WIDTH = 1280, HEIGHT = 760;
 
 	public Renderer renderer;
+	public Shader shader;
 	public Mesh mesh = new Mesh(
 		new Vertex[] { 
 			new Vertex(new Vector3f(-0.5f,  0.5f, 0.0f)), 
@@ -36,11 +38,13 @@ public class Main implements Runnable {
 
 	public void init() {
 		System.out.println("initalizing game");
-		renderer = new Renderer();
+		shader = new Shader("/shaders/mainVertex.glsl", "/shaders/mainFragment.glsl");
+		renderer = new Renderer(shader);
 		window = new Window(WIDTH, HEIGHT, "GAME");
 		window.setBackgroundColor(1.0f, 0f, 0f);
 		window.create();
 		mesh.create();
+		shader.create();
 	}
 
 	public void run() {
