@@ -54,14 +54,36 @@ public class GuessANumber implements Runnable {
 	}
 	
 	public void GameLoop() {
-		System.out.println("Make Computer Guess (C) or Guess Yourself (Y)" + gNumber);
+		System.out.println("Make Computer Guess (C) or Guess Yourself (Y)");
 	    String guess = uIn.nextLine();
-	    if(guess.equals("C")) {
-	    	
+	    if(guess.equals("C") || guess.equals("c")) {
+	    	System.out.println("Choose a number between 1-100");
+		    String usrNumS = uIn.nextLine();
+		    int usrNum;
+		    try {
+		    	usrNum = Integer.parseInt(usrNumS);	
+		    }
+		    catch (Exception e){
+		    	System.out.println("Not a valid Number (Exeption in integer parse)");
+		    	GameLoop();
+		    	return;
+		    }
+		    if(usrNum > 100 || usrNum < 0) {
+		    	System.out.println("Not a valid Number (Exeption number was greater then 100 or less than 0");
+		    	GameLoop();
+		    	return;
+		    }
 	    }
 	    else if(guess.equals("Y") || guess.equals("y")) {
 			int rNumber = rand.nextInt(101);
-			String scoreFileContent = readScoreFile();
+			String scoreFileContent = "";
+			try {
+				scoreFileContent = readScoreFile();
+			}
+			catch(Exception e) {
+				writeScoreFile(50);
+				scoreFileContent = readScoreFile();
+			}
 			int highScore;
 			try {
 				highScore = Integer.parseInt(scoreFileContent.substring(scoreFileContent.lastIndexOf(": ") + 2).trim());
@@ -100,6 +122,10 @@ public class GuessANumber implements Runnable {
 			    	tempNum = rNumber;
 			    }
 			}
+	    }
+	    else {
+	    	System.err.println("invalid input try again");
+	    	GameLoop();
 	    }
 	}
 	
