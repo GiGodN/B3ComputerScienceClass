@@ -70,6 +70,7 @@ public class Movies {
 			System.out.printf("Average movie criticrating: %.2f \n", critScr);
 			System.out.printf("Overall movie rating: %.2f \n", average(avgWeb, .2, avgFoc, .3, critScr, .5));
 		}
+		key.close();
 	}
 
 	// Average for integer array

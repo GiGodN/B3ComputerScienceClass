@@ -24,6 +24,7 @@ public class GraphicsRunnerBH extends JFrame {
 	}
 
 	public static void main(String args[]) {
+		@SuppressWarnings("unused")
 		GraphicsRunnerBH run = new GraphicsRunnerBH();
 	}
 }

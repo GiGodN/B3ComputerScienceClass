@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Tablet extends JPanel implements KeyListener, Runnable {
+	private static final long serialVersionUID = 1L;
+
 	private boolean[] keys;
 
 	private int x;
@@ -118,7 +120,8 @@ public class Tablet extends JPanel implements KeyListener, Runnable {
 	public void run() {
 		try {
 			while (true) {
-				Thread.currentThread().sleep(5);
+				Thread.currentThread();
+				Thread.sleep(5);
 				repaint();
 			}
 		} catch (Exception e) {

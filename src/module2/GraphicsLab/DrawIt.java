@@ -6,6 +6,7 @@ import java.awt.Component;
 import javax.swing.JFrame;
 
 public class DrawIt extends JFrame {
+	private static final long serialVersionUID = 1L;
 	public static int WIDTH = 800;
 	public static int HEIGHT = 600;
 
@@ -24,6 +25,7 @@ public class DrawIt extends JFrame {
 	}
 
 	public static void main(String args[]) {
+		@SuppressWarnings("unused")
 		DrawIt run = new DrawIt();
 	}
 }

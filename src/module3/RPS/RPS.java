@@ -46,6 +46,7 @@ public class RPS {
 			System.out.print("Do you want to play again? ");
 			if(!key.nextLine().strip().equals("y")) replay = false;
 		}
+		key.close();
 	}
 
 }

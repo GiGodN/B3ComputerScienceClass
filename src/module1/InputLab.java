@@ -43,6 +43,7 @@ public class InputLab {
 		System.out.println();
 		System.out.println("short one = " + shortOne);
 		System.out.println("short two = " + shortTwo);
+		keyboard.close();
 
 	}
 }

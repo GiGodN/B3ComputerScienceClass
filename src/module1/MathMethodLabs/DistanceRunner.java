@@ -18,8 +18,8 @@ public class DistanceRunner {
 		out.print("Enter Y2 :: ");
 		int y2 = keyboard.nextInt();
 
-		Distance test = new Distance();
-		System.out.printf("Distance == %.3f", test.getDistance(x1, y1, x2, y2));
+		System.out.printf("Distance == %.3f", Distance.getDistance(x1, y1, x2, y2));
+		keyboard.close();
 	}
 }
 

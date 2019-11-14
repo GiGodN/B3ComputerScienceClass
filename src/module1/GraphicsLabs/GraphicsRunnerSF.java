@@ -21,6 +21,7 @@ public class GraphicsRunnerSF extends JFrame {
 	}
 
 	public static void main(String args[]) {
+		@SuppressWarnings("unused")
 		GraphicsRunnerSF run = new GraphicsRunnerSF();
 	}
 }

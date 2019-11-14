@@ -20,6 +20,7 @@ public class GraphicsRunnerR extends JFrame {
 	}
 
 	public static void main(String args[]) {
+		@SuppressWarnings("unused")
 		GraphicsRunnerR run = new GraphicsRunnerR();
 	}
 }

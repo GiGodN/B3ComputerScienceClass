@@ -15,9 +15,9 @@ public class QuadraticRunner {
 		out.print("Enter c :: ");
 		int quadC = keyboard.nextInt();
 
-		Quadratic test = new Quadratic();
-		System.out.println("rootone :: " + test.getRootOne(quadA, quadB, quadC));
-		System.out.println("rootone :: " + test.getRootTwo(quadA, quadB, quadC));
+		System.out.println("rootone :: " + Quadratic.getRootOne(quadA, quadB, quadC));
+		System.out.println("rootone :: " + Quadratic.getRootTwo(quadA, quadB, quadC));
+		keyboard.close();
 	}
 }
 

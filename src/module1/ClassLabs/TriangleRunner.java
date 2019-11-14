@@ -21,6 +21,7 @@ public class TriangleRunner // this class is used to test Triangle
 		Triangle test = new Triangle(a, b, c);
 		test.calcPerimeter();
 		System.out.printf("Area == %.5f", test.getArea());
+		keyboard.close();
 	}
 }
 
