@@ -6,25 +6,11 @@ import java.util.List;
 public class Trippels {
 
 	public static void main(String[] args) {
-		System.out.println(validate(110));
+		System.out.println(gen(110));
 	}
 	
-	private static String validate(int target) {
-		List<int[]> list = gen(target);
-		List<int[]> temp = new ArrayList<int[]>();
+	private static String gen(int target) {
 		String val = "";
-		for (int x = 0; x < list.size(); x++) {
-			for (int y = 0; y < list.size(); y++) {
-				if (!(list.get(x)[0] == list.get(y)[0] && list.get(x)[1] == list.get(y)[1])) {
-					temp.add(list.get(x));
-				}
-			}
-		}
-		return val;
-	}
-	
-	private static List<int[]> gen(int target) {
-		List<int[]> val = new ArrayList<int[]>();
 		for (int x = 1; x <= target; x++) {
 			for (int y = 1; y <= target; y++) {
 				for (int z = 1; z <= target; z++) {
@@ -32,7 +18,7 @@ public class Trippels {
 							&& (((x % 2 == 0) && (y % 2 == 1)) || ((x % 2 == 1) && (y % 2 == 0))) 
 							&& z % 2 == 1
 							&& findGCD3(x, y, z) == 1) {
-						val.add(new int[] {x, y, z});
+						val += "" + x + " " + y + " " + z + "\n";
 					}
 				}
 			}
