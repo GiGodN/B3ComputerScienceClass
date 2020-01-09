@@ -44,6 +44,7 @@ public class Dog {
 		}
 		double totalBags = totalFood / 60;
 		tempS = "" + (int)Math.ceil(totalBags) + " - 10 Pound Bags";
+		temp.close();
 		return tempS;
 	}
 	

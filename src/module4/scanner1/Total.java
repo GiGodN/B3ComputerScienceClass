@@ -18,6 +18,7 @@ public class Total {
 		while(temp.hasNext()) {
 			sum += temp.nextInt();
 		}
+		temp.close();
 		return sum;
 	}
 	
