@@ -1,40 +1,43 @@
 package module5.grade;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import static java.lang.System.*;
-import static java.util.Arrays.*;
-import java.io.File;
+import static java.lang.System.out;
 
-public class GradeBookFileRunner
-{
-   public static void main( String args[] ) throws Exception
-   {
+import java.io.File;
+import java.util.Scanner;
+
+public class GradeBookFileRunner {
+	public static void main(String args[]) throws Exception {
 		out.println("Welcome to the Class Stats program!");
-		
-		Scanner file = new Scanner(new File("gradebook.dat"));
+
+		Scanner file = new Scanner(new File("data/gradebook.dat"));
 		String className = file.nextLine();
 		int numStudents = file.nextInt();
 		file.nextLine();
-		
-		//make a new class
-		
-		
-		//read in the information for each student
-		
-			//read in the student name
-			
-			//read in the student's grades
-			
-			//add a new student to the class
-		
-		//print out the class
-		
-		
-		out.println("Failure List = " + theClass.getFailureList(70));	
+
+		Class theClass = new Class(className, numStudents);
+
+		for (int i = 0; i < numStudents; i++) {
+			String stuName = file.nextLine();
+
+			int c = file.nextInt();
+			file.nextLine();
+
+			double[] g = new double[c];
+			for (int x = 0; x < c; x++) {
+				g[x] = file.nextDouble();
+			}
+			file.nextLine();
+
+			theClass.addStudent(i, new Student(stuName, g));
+		}
+
+		System.out.println("\n\n" + theClass);
+
+		out.println("Failure List = " + theClass.getFailureList(70));
 		out.println("Highest Average = " + theClass.getStudentWithHighestAverage());
 		out.println("Lowest Average = " + theClass.getStudentWithLowestAverage());
-		
+
 		out.println("Class average = " + theClass.getClassAverage());
-	}		
+		file.close();
+	}
 }

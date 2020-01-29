@@ -1,8 +1,6 @@
 package module5.grade;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class Student {
@@ -35,16 +33,14 @@ public class Student {
 	}
 
 	public double getAverageMinusLow() {
-		List<Grade> tempL = new ArrayList<Grade>();
+		List<Double> tempL = new ArrayList<Double>();
 		for (Grade g : myGrades.getGArr()) {
-			tempL.add(g);
-		}
-		System.out.println(tempL.remove(myGrades.getLowGrade()));
-		double[] tempA = new double[tempL.size()];
+			tempL.add(g.getNumericGrade());
+		}tempL.remove(myGrades.getLowGrade());
+		Grades tempG = new Grades(new double[tempL.size()]);
 		for (int i = 0; i < tempL.size(); i++) {
-			tempA[i] = tempL.get(i).getNumericGrade();
+			tempG.setGrade(i, tempL.get(i).doubleValue());
 		}
-		Grades tempG = new Grades(tempA);
 		return tempG.getSum()/tempG.getNumGrades();
 	}
 
