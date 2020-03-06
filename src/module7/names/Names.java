@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
@@ -25,15 +26,53 @@ public class Names {
 		if (nameM == null) {
 			return;
 		}
-		for (String[] s : nameM) {
-			for (String s1 : s) {
-				System.out.print(s1 + " ");
-			}
-			System.out.println();
-		}
-		System.out.println(nameM.length);
+//		for (String[] s : nameM) {
+//			for (String s1 : s) {
+//				System.out.print(s1 + " ");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println(nameM.length);
 		System.out.println(getTopName(nameM));
-
+		System.out.println("enter a starting letter");
+		System.out.println(amntName(key.next(), nameM));
+		String nameFreq = "";
+		for(char i = 65; i <=90; i++) {
+			System.out.println(i + " :" + amntNameChar(i,  nameM));
+			nameFreq += i + " :" + amntNameChar(i,  nameM) + "\n";
+		}
+		FileWriter fR;
+		try {
+			fR = new FileWriter(System.getProperty("user.home") + File.separator + "data" + File.separator + year + "NameData.dat");
+			fR.write(nameFreq);
+			fR.close();
+		} catch (IOException e) {
+			System.out.print("fR failure");
+			return;
+		}
+		key.close();
+	}
+	
+	public static int amntName(String let, String[][] data) {
+		char lett = let.toUpperCase().toCharArray()[0];
+		int amt = 0;
+		for(String[] sA : data) {
+			if(sA[0].toCharArray()[0] == lett) {
+				amt += Integer.parseInt(sA[2]);
+			}
+		}
+		return amt;
+	}
+	
+	public static int amntNameChar(char let, String[][] data) {
+		char lett = let;
+		int amt = 0;
+		for(String[] sA : data) {
+			if(sA[0].toCharArray()[0] == lett) {
+				amt += Integer.parseInt(sA[2]);
+			}
+		}
+		return amt;
 	}
 
 	public static String getTopName(String[][] data) {
@@ -88,7 +127,7 @@ public class Names {
 				readChars = is.read(c);
 			}
 			while (readChars != -1) {
-				System.out.println(readChars);
+				//System.out.println(readChars);
 				for (int i = 0; i < readChars; ++i) {
 					if (c[i] == '\n') {
 						++count;
