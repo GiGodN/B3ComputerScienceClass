@@ -10,9 +10,11 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 //Noah John & Austin Li
+//Files are written to ~/data/
 
 public class Names {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		Scanner key = new Scanner(System.in);
 		System.out.println("enter a year between 1880 and 2018 (inclusive)");
@@ -36,21 +38,28 @@ public class Names {
 		System.out.println(getTopName(nameM));
 		System.out.println("enter a starting letter");
 		System.out.println(amntName(key.next(), nameM));
+		try {
+			writeFile(nameM, new FileWriter(System.getProperty("user.home") + File.separator + "data" + File.separator + year + "NameData.dat"));
+		} catch (IOException e) {
+			System.out.print("fR failure");
+			return;
+		}
+		key.close();
+	}
+	
+	public static void writeFile(String[][] data,  FileWriter fR) {
 		String nameFreq = "";
 		for(char i = 65; i <=90; i++) {
-			System.out.println(i + " :" + amntNameChar(i,  nameM));
-			nameFreq += i + " :" + amntNameChar(i,  nameM) + "\n";
+			System.out.println(i + " :" + amntNameChar(i,  data));
+			nameFreq += i + " :" + amntNameChar(i,  data) + "\n";
 		}
-		FileWriter fR;
 		try {
-			fR = new FileWriter(System.getProperty("user.home") + File.separator + "data" + File.separator + year + "NameData.dat");
 			fR.write(nameFreq);
 			fR.close();
 		} catch (IOException e) {
 			System.out.print("fR failure");
 			return;
 		}
-		key.close();
 	}
 	
 	public static int amntName(String let, String[][] data) {
@@ -104,6 +113,7 @@ public class Names {
 			nameM[i][0] = f.next();
 			nameM[i][1] = f.next();
 			nameM[i][2] = f.next();
+			f.close();
 		}
 		s.close();
 		return nameM;
