@@ -53,7 +53,12 @@ public class Grades {
 	public String toString() {
 		String s = "";
 		for (Grade num : grades) {
-			s += " " + num.toString();
+			if (s.equals("")) {
+				s += num.toString();
+			} else {
+				s += ", " + num.toString();
+			}
+			
 		}
 		return s;
 	}
